@@ -4,6 +4,10 @@
   "description": "Cloud Computing Lab 01 - TDMU",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
   }
 }
