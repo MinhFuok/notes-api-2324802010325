@@ -7,6 +7,7 @@
     <title>Hello Cloud - TDMU Lab 01</title>
     <style>
         * { box-sizing: border-box; }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -14,14 +15,25 @@
             color: #243047;
             line-height: 1.6;
         }
+
         header {
             background: #173b80;
             color: white;
             padding: 50px 20px;
             text-align: center;
         }
-        header h1 { font-size: 38px; margin: 0; }
-        main { max-width: 960px; margin: 30px auto; padding: 0 18px; }
+
+        header h1 {
+            font-size: 38px;
+            margin: 0;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 0 18px;
+        }
+
         section {
             background: white;
             padding: 24px;
@@ -29,20 +41,62 @@
             margin-bottom: 22px;
             box-shadow: 0 3px 12px #0000000a;
         }
-        h2 { color: #173b80; margin-top: 0; }
+
+        h2 {
+            color: #173b80;
+            margin-top: 0;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 14px;
         }
-        .item { background: #eef4ff; padding: 16px; border-radius: 8px; }
-        .item h3 { margin: 0 0 8px; color: #173b80; }
+
+        .item {
+            background: #eef4ff;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .item h3 {
+            margin: 0 0 8px;
+            color: #173b80;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #d6deeb;
+            padding: 12px;
+            vertical-align: top;
+        }
+
+        th {
+            background: #dce8ff;
+            color: #173b80;
+        }
+
+        tr:nth-child(even) {
+            background: #f7f9fd;
+        }
+
         input {
             width: 100%;
             padding: 12px;
             border: 1px solid #bbb;
             border-radius: 6px;
         }
+
         button {
             background: #173b80;
             color: white;
@@ -52,6 +106,11 @@
             margin-top: 12px;
             cursor: pointer;
         }
+
+        button:hover {
+            background: #0d285a;
+        }
+
         pre {
             background: #172235;
             color: #d8f4dd;
@@ -61,106 +120,247 @@
             white-space: pre-wrap;
             overflow-wrap: anywhere;
         }
-        footer { text-align: center; padding: 20px; color: #666; }
+
+        .note {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        a {
+            color: #2455a4;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>☁️ Hello Cloud</h1>
         <p>Thực hành Điện toán đám mây - Lab 01</p>
         <p>Trường Đại học Thủ Dầu Một</p>
+        <p>Ngô Sỷ Minh Phước - 2324802010325</p>
     </header>
 
     <main>
+
         <section>
             <h2>Giới thiệu</h2>
-            <p>Dự án minh họa môi trường phát triển trên đám mây
-               bằng GitHub Codespaces, Node.js và GitHub Pages.</p>
-            <p>API Hello Cloud cung cấp dữ liệu JSON qua HTTP.</p>
+            <p>
+                Dự án minh họa môi trường phát triển trên đám mây
+                bằng GitHub Codespaces, Node.js, Express và GitHub Pages.
+            </p>
+            <p>
+                API Hello Cloud cung cấp dữ liệu JSON qua HTTP,
+                bao gồm thông tin máy chủ, CPU, RAM, hệ điều hành
+                và thời gian hoạt động.
+            </p>
+            <p>
+                <strong>Repository:</strong>
+                <a href="https://github.com/MinhFuok/notes-api-2324802010325" target="_blank" rel="noopener noreferrer">
+                    notes-api-2324802010325
+                </a>
+            </p>
         </section>
 
         <section>
             <h2>5 đặc tính điện toán đám mây theo NIST</h2>
+
             <div class="grid">
+
                 <div class="item">
                     <h3>1. On-demand self-service</h3>
-                    <p>Tự cấp phát tài nguyên theo nhu cầu mà không
-                       cần nhân viên nhà cung cấp thao tác trực tiếp.</p>
+                    <p>
+                        Tự tạo và khởi chạy GitHub Codespace
+                        mà không cần nhân viên nhà cung cấp hỗ trợ.
+                    </p>
+                    <p>
+                        <strong>Thực tế:</strong> Sinh viên tự cấp phát
+                        môi trường lập trình qua GitHub.
+                    </p>
                 </div>
+
                 <div class="item">
                     <h3>2. Broad network access</h3>
-                    <p>Truy cập tài nguyên qua mạng bằng các
-                       thiết bị và giao thức tiêu chuẩn.</p>
+                    <p>
+                        Tài nguyên Cloud có thể truy cập qua mạng
+                        bằng nhiều loại thiết bị.
+                    </p>
+                    <p>
+                        <strong>Thực tế:</strong> Truy cập Hello Cloud API
+                        bằng điện thoại thông qua URL Public của Codespaces.
+                    </p>
                 </div>
+
                 <div class="item">
                     <h3>3. Resource pooling</h3>
-                    <p>Tài nguyên của nhà cung cấp được dùng chung
-                       và phân bổ động cho nhiều khách hàng.</p>
+                    <p>
+                        Tài nguyên được cấp phát từ hạ tầng Cloud
+                        dùng chung của nhà cung cấp.
+                    </p>
+                    <p>
+                        <strong>Thực tế:</strong> Sử dụng môi trường
+                        Codespaces với 2 CPU và 7.8 GB RAM theo API.
+                    </p>
                 </div>
+
                 <div class="item">
                     <h3>4. Rapid elasticity</h3>
-                    <p>Tài nguyên có thể mở rộng hoặc thu hẹp
-                       nhanh chóng theo nhu cầu sử dụng.</p>
+                    <p>
+                        Tài nguyên Cloud có khả năng mở rộng
+                        hoặc thu hẹp theo nhu cầu.
+                    </p>
+                    <p>
+                        <strong>Thực tế:</strong> Codespaces hỗ trợ
+                        thay đổi cấu hình máy. Đã thực hiện
+                        khởi chạy và dừng Codespace,
+                        chưa kiểm thử co giãn tự động.
+                    </p>
                 </div>
+
                 <div class="item">
                     <h3>5. Measured service</h3>
-                    <p>Việc sử dụng tài nguyên được đo lường,
-                       giám sát và báo cáo.</p>
+                    <p>
+                        Mức sử dụng tài nguyên được theo dõi,
+                        đo lường và thống kê.
+                    </p>
+                    <p>
+                        <strong>Thực tế:</strong> GitHub Billing Usage
+                        ghi nhận 0.49 GB-month lưu trữ,
+                        chi phí trước ưu đãi $0.03,
+                        số tiền thực trả $0.
+                    </p>
                 </div>
+
             </div>
         </section>
 
         <section>
-            <h2>Kiểm thử Hello Cloud API</h2>
-            <p>Nhập địa chỉ API từ cổng 3000 của Codespaces:</p>
-            <input id="diaChiApi" placeholder="https://...app.github.dev/api/hello">
-            <button onclick="kiemTraApi()">Gọi API</button>
-            <pre id="ketQua">Chưa có kết quả.</pre>
+            <h2>So sánh máy cá nhân và GitHub Codespaces</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tiêu chí</th>
+                            <th>Máy cá nhân</th>
+                            <th>GitHub Codespaces</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Thời gian đến khi chạy node -v</td>
+                            <td>
+                                Node.js đã cài sẵn,
+                                chưa đo thời gian thiết lập.
+                            </td>
+                            <td>
+                                3 phút 10 giây (190 giây).
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>CPU và RAM</td>
+                            <td>
+                                AMD Ryzen 5 5600H,
+                                6 nhân / 12 luồng,
+                                15.4 GB RAM.
+                            </td>
+                            <td>
+                                2 CPU,
+                                7.8 GB RAM theo API.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Hệ điều hành</td>
+                            <td>
+                                Windows 10 Pro,
+                                Node.js v26.13.0.
+                            </td>
+                            <td>
+                                Debian 13 Linux,
+                                kernel 6.8.0-1064-azure,
+                                Node.js v22.23.4.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Truy cập từ thiết bị khác</td>
+                            <td>
+                                Cần cấu hình mạng phù hợp
+                                để chia sẻ ứng dụng.
+                            </td>
+                            <td>
+                                Truy cập qua URL Public
+                                của Codespaces.
+                                Đã kiểm thử thành công
+                                bằng điện thoại.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Chi phí và đo lường</td>
+                            <td>
+                                Chi phí phần cứng và điện năng,
+                                chưa thực hiện đo lường.
+                            </td>
+                            <td>
+                                GitHub Billing Usage:
+                                0.49 GB-month lưu trữ;
+                                $0.03 trước ưu đãi;
+                                $0 thực trả.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="note">
+                Số liệu được ghi nhận trong quá trình thực hành
+                ngày 05/11/2026. Thời gian khởi tạo Codespace
+                vượt mục tiêu dưới 2 phút do quá trình thiết lập
+                môi trường có thể cần thêm thời gian.
+            </p>
         </section>
+
         <section>
-    <h2>So sánh máy cá nhân và GitHub Codespaces</h2>
-    <div style="overflow-x:auto">
-        <table style="width:100%;border-collapse:collapse;text-align:left" border="1" cellpadding="12">
-            <thead style="background:#dce8ff">
-                <tr>
-                    <th>Tiêu chí</th>
-                    <th>Máy cá nhân</th>
-                    <th>GitHub Codespaces</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Thời gian đến khi chạy node -v</td>
-                    <td>Node.js đã cài sẵn, chưa đo</td>
-                    <td>3 phút 10 giây (190 giây)</td>
-                </tr>
-                <tr>
-                    <td>CPU và RAM</td>
-                    <td>AMD Ryzen 5 5600H, 6 nhân/12 luồng, 15.4 GB RAM</td>
-                    <td>2 CPU, 7.8 GB RAM</td>
-                </tr>
-                <tr>
-                    <td>Hệ điều hành</td>
-                    <td>Windows 10 Pro</td>
-                    <td>Debian 13 (Linux), kernel 6.8.0-1064-azure</td>
-                </tr>
-                <tr>
-                    <td>Truy cập từ thiết bị khác</td>
-                    <td>Cần cấu hình mạng phù hợp</td>
-                    <td>URL Public của Codespaces, đã kiểm thử bằng điện thoại</td>
-                </tr>
-                <tr>
-                    <td>Chi phí và đo lường</td>
-                    <td>Phần cứng, điện năng; chưa đo</td>
-                    <td>Billing Usage: 0.49 GB-month lưu trữ; $0.03 trước ưu đãi; $0 thực trả</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+            <h2>Kiểm thử Hello Cloud API</h2>
+
+            <p>
+                Nhập địa chỉ API từ cổng 3000 của
+                GitHub Codespaces:
+            </p>
+
+            <input
+                id="diaChiApi"
+                type="url"
+                placeholder="https://ten-codespace-3000.app.github.dev/"
+            >
+
+            <button onclick="kiemTraApi()">Gọi API</button>
+
+            <pre id="ketQua">Chưa có kết quả.</pre>
+
+            <p class="note">
+                API chỉ hoạt động khi Codespace đang chạy.
+                Khi kết thúc kiểm thử, cổng 3000 cần
+                được chuyển về Private.
+            </p>
+        </section>
+
     </main>
 
-    <footer>TDMU - Cloud Computing Lab 01</footer>
+    <footer>
+        TDMU - Cloud Computing Lab 01
+        <p>Ngô Sỷ Minh Phước - 2324802010325</p>
+    </footer>
 
     <script>
         async function kiemTraApi() {
@@ -173,14 +373,30 @@
             }
 
             try {
-                const phanHoi = await fetch(duongDan);
-                if (!phanHoi.ok) throw new Error("HTTP " + phanHoi.status);
+                const url = new URL(duongDan);
+
+                if (url.protocol !== "https:") {
+                    ketQua.textContent = "Vui lòng nhập URL HTTPS.";
+                    return;
+                }
+
+                ketQua.textContent = "Đang kết nối API...";
+
+                const phanHoi = await fetch(url.href);
+
+                if (!phanHoi.ok) {
+                    throw new Error("HTTP " + phanHoi.status);
+                }
+
                 const duLieu = await phanHoi.json();
+
                 ketQua.textContent = JSON.stringify(duLieu, null, 2);
+
             } catch (loi) {
                 ketQua.textContent = "Không thể kết nối API: " + loi.message;
             }
         }
     </script>
+
 </body>
 </html>
