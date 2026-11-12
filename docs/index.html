@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Cloud - TDMU Lab 01</title>
+    <title>Hello Cloud - TDMU Lab 01 & 02</title>
     <style>
         * { box-sizing: border-box; }
 
@@ -23,10 +23,7 @@
             text-align: center;
         }
 
-        header h1 {
-            font-size: 38px;
-            margin: 0;
-        }
+        header h1 { font-size: 38px; margin: 0; }
 
         main {
             max-width: 960px;
@@ -42,10 +39,8 @@
             box-shadow: 0 3px 12px #0000000a;
         }
 
-        h2 {
-            color: #173b80;
-            margin-top: 0;
-        }
+        h2 { color: #173b80; margin-top: 0; }
+        h3 { color: #173b80; }
 
         .grid {
             display: grid;
@@ -64,9 +59,7 @@
             color: #173b80;
         }
 
-        .table-container {
-            overflow-x: auto;
-        }
+        .table-container { overflow-x: auto; }
 
         table {
             width: 100%;
@@ -86,9 +79,7 @@
             color: #173b80;
         }
 
-        tr:nth-child(even) {
-            background: #f7f9fd;
-        }
+        tr:nth-child(even) { background: #f7f9fd; }
 
         input {
             width: 100%;
@@ -107,9 +98,7 @@
             cursor: pointer;
         }
 
-        button:hover {
-            background: #0d285a;
-        }
+        button:hover { background: #0d285a; }
 
         pre {
             background: #172235;
@@ -142,13 +131,14 @@
 
     <header>
         <h1>☁️ Hello Cloud</h1>
-        <p>Thực hành Điện toán đám mây - Lab 01</p>
+        <p>Thực hành Điện toán đám mây - Lab 01 & 02</p>
         <p>Trường Đại học Thủ Dầu Một</p>
         <p>Ngô Sỷ Minh Phước - 2324802010325</p>
     </header>
 
     <main>
 
+        <!-- LAB 01 -->
         <section>
             <h2>Giới thiệu</h2>
             <p>
@@ -162,7 +152,8 @@
             </p>
             <p>
                 <strong>Repository:</strong>
-                <a href="https://github.com/MinhFuok/notes-api-2324802010325" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/MinhFuok/notes-api-2324802010325"
+                   target="_blank" rel="noopener noreferrer">
                     notes-api-2324802010325
                 </a>
             </p>
@@ -170,7 +161,6 @@
 
         <section>
             <h2>5 đặc tính điện toán đám mây theo NIST</h2>
-
             <div class="grid">
 
                 <div class="item">
@@ -242,7 +232,6 @@
 
         <section>
             <h2>So sánh máy cá nhân và GitHub Codespaces</h2>
-
             <div class="table-container">
                 <table>
                     <thead>
@@ -252,91 +241,46 @@
                             <th>GitHub Codespaces</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr>
                             <td>Thời gian đến khi chạy node -v</td>
-                            <td>
-                                Node.js đã cài sẵn,
-                                chưa đo thời gian thiết lập.
-                            </td>
-                            <td>
-                                3 phút 10 giây (190 giây).
-                            </td>
+                            <td>Node.js đã cài sẵn, chưa đo thời gian thiết lập.</td>
+                            <td>3 phút 10 giây (190 giây).</td>
                         </tr>
-
                         <tr>
                             <td>CPU và RAM</td>
-                            <td>
-                                AMD Ryzen 5 5600H,
-                                6 nhân / 12 luồng,
-                                15.4 GB RAM.
-                            </td>
-                            <td>
-                                2 CPU,
-                                7.8 GB RAM theo API.
-                            </td>
+                            <td>AMD Ryzen 5 5600H, 6 nhân/12 luồng, 15.4 GB RAM.</td>
+                            <td>2 CPU, 7.8 GB RAM theo API.</td>
                         </tr>
-
                         <tr>
                             <td>Hệ điều hành</td>
-                            <td>
-                                Windows 10 Pro,
-                                Node.js v26.13.0.
-                            </td>
-                            <td>
-                                Debian 13 Linux,
-                                kernel 6.8.0-1064-azure,
-                                Node.js v22.23.4.
-                            </td>
+                            <td>Windows 10 Pro, Node.js v26.13.0.</td>
+                            <td>Debian 13 Linux, kernel 6.8.0-1064-azure, Node.js v22.23.4.</td>
                         </tr>
-
                         <tr>
                             <td>Truy cập từ thiết bị khác</td>
-                            <td>
-                                Cần cấu hình mạng phù hợp
-                                để chia sẻ ứng dụng.
-                            </td>
-                            <td>
-                                Truy cập qua URL Public
-                                của Codespaces.
-                                Đã kiểm thử thành công
-                                bằng điện thoại.
-                            </td>
+                            <td>Cần cấu hình mạng phù hợp để chia sẻ ứng dụng.</td>
+                            <td>URL Public của Codespaces, đã kiểm thử bằng điện thoại.</td>
                         </tr>
-
                         <tr>
                             <td>Chi phí và đo lường</td>
-                            <td>
-                                Chi phí phần cứng và điện năng,
-                                chưa thực hiện đo lường.
-                            </td>
-                            <td>
-                                GitHub Billing Usage:
-                                0.49 GB-month lưu trữ;
-                                $0.03 trước ưu đãi;
-                                $0 thực trả.
-                            </td>
+                            <td>Chi phí phần cứng, điện năng; chưa đo.</td>
+                            <td>0.49 GB-month lưu trữ; $0.03 trước ưu đãi; $0 thực trả.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <p class="note">
-                Số liệu được ghi nhận trong quá trình thực hành
-                ngày 05/11/2026. Thời gian khởi tạo Codespace
-                vượt mục tiêu dưới 2 phút do quá trình thiết lập
-                môi trường có thể cần thêm thời gian.
+                Số liệu thực hành ngày 05/11/2026.
+                Codespace khởi tạo trong 190 giây,
+                vượt mục tiêu dưới 2 phút.
             </p>
         </section>
 
         <section>
             <h2>Kiểm thử Hello Cloud API</h2>
-
-            <p>
-                Nhập địa chỉ API từ cổng 3000 của
-                GitHub Codespaces:
-            </p>
+            <p>Nhập địa chỉ API từ cổng 3000 của GitHub Codespaces:</p>
 
             <input
                 id="diaChiApi"
@@ -345,20 +289,154 @@
             >
 
             <button onclick="kiemTraApi()">Gọi API</button>
-
             <pre id="ketQua">Chưa có kết quả.</pre>
 
             <p class="note">
                 API chỉ hoạt động khi Codespace đang chạy.
-                Khi kết thúc kiểm thử, cổng 3000 cần
-                được chuyển về Private.
+                Sau kiểm thử, chuyển cổng 3000 về Private.
+            </p>
+        </section>
+
+        <!-- LAB 02 -->
+        <section id="lab02">
+            <h2>Lab 02 - Ảo hóa, Container và CloudSim Plus</h2>
+
+            <p>
+                Đóng gói API Hello Cloud bằng Docker, chạy hai container,
+                giới hạn tài nguyên, phát hành image lên GHCR
+                và mô phỏng trung tâm dữ liệu bằng CloudSim Plus.
+            </p>
+
+            <h3>1. Docker Image trên GHCR</h3>
+
+            <p>
+                <strong>Image:</strong>
+                <code>ghcr.io/minhfuok/notes-api:1.0</code>
+            </p>
+
+            <p>
+                <a href="https://github.com/MinhFuok?tab=packages"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem GitHub Packages
+                </a>
+            </p>
+
+            <p>
+                Container <strong>notes2</strong> được giới hạn
+                <strong>0,5 CPU</strong> và
+                <strong>128 MiB RAM</strong>.
+                Bộ nhớ sử dụng khi kiểm tra:
+                <strong>12,92 MiB</strong>.
+            </p>
+
+            <h3>2. Bảng 1 - So sánh máy ảo và Container</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tiêu chí</th>
+                            <th>Codespace (VM)</th>
+                            <th>Container notes2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thời gian khởi động</td>
+                            <td>190 giây (thời gian tạo Codespace, Lab 01)</td>
+                            <td>0,409 giây (chạy tiến trình Node.js ngắn)</td>
+                        </tr>
+                        <tr>
+                            <td>Kích thước</td>
+                            <td>15 GB-tháng (hạn mức lưu trữ miễn phí)</td>
+                            <td>251 MB Disk Usage; 63,3 MB Content Size</td>
+                        </tr>
+                        <tr>
+                            <td>Nhân hệ điều hành</td>
+                            <td>Kernel Linux của máy ảo Codespaces</td>
+                            <td>Dùng chung kernel 6.8.0-1070-azure với Docker host</td>
+                        </tr>
+                        <tr>
+                            <td>Mức cô lập</td>
+                            <td>Cô lập bằng công nghệ máy ảo</td>
+                            <td>Namespaces và cgroups; giới hạn 0,5 CPU, 128 MiB RAM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="note">
+                Thời gian tạo Codespace và chạy tiến trình Node.js trong
+                container không phải hai phép đo tương đương.
+                Hạn mức 15 GB-tháng không phải kích thước thực tế của VM.
+            </p>
+
+            <p>
+                <strong>Nhận xét:</strong>
+                Container khởi chạy tiến trình thử nghiệm nhanh,
+                chia sẻ Linux kernel với Docker host và sử dụng
+                cgroups để giới hạn tài nguyên. Máy ảo có
+                lớp cô lập độc lập hơn.
+            </p>
+
+            <h3>3. Bảng 2 - Kết quả mô phỏng CloudSim Plus</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lần</th>
+                            <th>Thay đổi</th>
+                            <th>Finish Time lớn nhất (giây)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>Cấu hình mặc định</td>
+                            <td>20,0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Nhân đôi VMS: 2 → 4</td>
+                            <td>45,6</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Nhân đôi CLOUDLETS: 4 → 8</td>
+                            <td>40,1*</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Đổi sang CloudletSchedulerSpaceShared</td>
+                            <td>20,1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="note">
+                * Lần 2 cấu hình 8 Cloudlet nhưng bảng kết quả
+                chỉ xác nhận 4 Cloudlet SUCCESS. Giá trị 40,1 giây
+                là thời điểm hoàn thành lớn nhất của 4 Cloudlet
+                đã hoàn thành, không phải của toàn bộ 8 Cloudlet.
+                Mô phỏng có cảnh báo VM bị hủy khi còn tác vụ.
+            </p>
+
+            <p>
+                <strong>Nhận xét:</strong>
+                Lần 0 và lần 3 có thời gian hoàn thành gần nhau
+                (20,0 và 20,1 giây). Lần 1 có thời gian hoàn thành
+                lớn nhất là 45,6 giây. Lần 2 chưa hoàn thành
+                toàn bộ Cloudlet nên chưa thể so sánh trực tiếp
+                với các lần còn lại.
             </p>
         </section>
 
     </main>
 
     <footer>
-        TDMU - Cloud Computing Lab 01
+        TDMU - Cloud Computing Lab 01 & 02
         <p>Ngô Sỷ Minh Phước - 2324802010325</p>
     </footer>
 
@@ -389,7 +467,6 @@
                 }
 
                 const duLieu = await phanHoi.json();
-
                 ketQua.textContent = JSON.stringify(duLieu, null, 2);
 
             } catch (loi) {
