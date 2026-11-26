@@ -1,8 +1,4 @@
-if [ -n "$CR_PAT" ]; then
-  echo "CR_PAT da duoc nap"
-else
-  echo "CR_PAT chua co"
-fiFROM node:22-alpine
+FROM node:22-alpine
 
 WORKDIR /app
 
